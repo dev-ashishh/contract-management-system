@@ -364,3 +364,89 @@ body {
   background: #e5e7eb;
   margin: 30px 0;
 }
+
+/* =====================
+   STATUS TIMELINE (FIXED & HIGHLIGHTED)
+===================== */
+
+.status-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0 40px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.timeline-step {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+/* Dot */
+.timeline-step .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #9ca3af;
+  margin-right: 8px;
+  transition: all 0.2s ease;
+}
+
+/* Line */
+.timeline-step .line {
+  width: 40px;
+  height: 2px;
+  background: #d1d5db;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Completed */
+.timeline-step.completed {
+  color: #0b5d73;
+}
+
+.timeline-step.completed .dot {
+  background: #0b5d73;
+}
+
+.timeline-step.completed .line {
+  background: #0b5d73;
+}
+
+/* Current (IMPORTANT FIX) */
+.timeline-step.current {
+  color: #0b5d73;
+  font-weight: 700;
+}
+
+.timeline-step.current .dot {
+  background: #0b5d73;
+  box-shadow: 0 0 0 6px rgba(11, 93, 115, 0.2);
+}
+
+/* Revoked */
+.timeline-step.revoked {
+  color: #dc2626;
+}
+
+.timeline-step.revoked .dot,
+.timeline-step.revoked .line {
+  background: #dc2626;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .status-timeline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-step .line {
+    display: none;
+  }
+}

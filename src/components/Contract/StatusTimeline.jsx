@@ -19,7 +19,7 @@ const StatusTimeline = ({ status }) => {
         return (
           <div key={step} className={className}>
             <div className="dot" />
-            <span>{step}</span>
+            <span className="label">{step}</span>
             {index !== STEPS.length - 1 && <div className="line" />}
           </div>
         );
